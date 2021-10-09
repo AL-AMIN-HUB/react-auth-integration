@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import useFirebase from "../../hooks/useFirebase";
+import useAuth from "../../hooks/useAuth";
 
 const Header = () => {
-  const { user, logout } = useFirebase();
+  const { user, logout } = useAuth();
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -15,6 +15,9 @@ const Header = () => {
             <Nav className="mx-auto my-2 my-lg-0" style={{ maxHeight: "100px" }} navbarScroll>
               <NavLink className="text-decoration-none fs-4 me-3" to="/home">
                 Home
+              </NavLink>{" "}
+              <NavLink className="text-decoration-none fs-4 me-3" to="/shipping">
+                Shipping
               </NavLink>
               <NavLink className="text-decoration-none fs-4 me-3" to="/login">
                 Login
@@ -23,7 +26,6 @@ const Header = () => {
                 Register
               </NavLink>
               <NavLink className="text-decoration-none fs-4 me-3" to="/register">
-                <span>{user.displayName}</span>
                 {user?.email && (
                   <button onClick={logout} className="btn btn-danger">
                     Logout
