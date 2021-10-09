@@ -19,13 +19,16 @@ const Header = () => {
               <NavLink className="text-decoration-none fs-4 me-3" to="/shipping">
                 Shipping
               </NavLink>
+              <NavLink className="text-decoration-none fs-4 me-3" to="/placeOrder">
+                Place Order
+              </NavLink>
               <NavLink className="text-decoration-none fs-4 me-3" to="/login">
                 Login
               </NavLink>
               <NavLink className="text-decoration-none fs-4 me-3" to="/register">
                 Register
               </NavLink>
-              <NavLink className="text-decoration-none fs-4 me-3" to="/register">
+              <NavLink className="text-decoration-none fs-4 me-3" to="/login">
                 {user?.email && (
                   <button onClick={logout} className="btn btn-danger">
                     Logout
